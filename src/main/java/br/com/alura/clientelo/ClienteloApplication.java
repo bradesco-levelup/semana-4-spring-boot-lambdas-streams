@@ -7,6 +7,9 @@ import br.com.alura.clientelo.relatorio.RelatorioSintetico;
 import br.com.alura.clientelo.utils.FormatUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -14,37 +17,19 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Main {
+@SpringBootApplication
+public class ClienteloApplication implements CommandLineRunner {
 
-    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+    private static final Logger logger = LoggerFactory.getLogger(ClienteloApplication.class);
 
     private Scanner scanner = new Scanner(System.in);
     private RepositorioDePedidos repositorioDePedidos = new RepositorioDePedidos();
 
     public static void main(String[] args) throws Exception {
-        Main main = new Main();
-        main.executa();
+        SpringApplication.run(ClienteloApplication.class, args);
     }
 
-    private void executa() {
-        String banner = """
-                   ██████╗██╗     ██╗███████╗███╗   ██╗████████╗███████╗██╗      ██████╗
-                  ██╔════╝██║     ██║██╔════╝████╗  ██║╚══██╔══╝██╔════╝██║     ██╔═══██╗
-                  ██║     ██║     ██║█████╗  ██╔██╗ ██║   ██║   █████╗  ██║     ██║   ██║
-                  ██║     ██║     ██║██╔══╝  ██║╚██╗██║   ██║   ██╔══╝  ██║     ██║   ██║
-                  ╚██████╗███████╗██║███████╗██║ ╚████║   ██║   ███████╗███████╗╚██████╔╝
-                   ╚═════╝╚══════╝╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚══════╝ ╚═════╝
-                
-                --------------------------------------------------------
-                🚀 Clientelo - Gerenciamento de Pedidos 🚀
-                --------------------------------------------------------
-                📦 Consulte pedidos, gere relatórios e analise dados!
-                🛠 Desenvolvido com Spring Boot
-                --------------------------------------------------------
-                """;
-
-        System.out.println(banner);
-
+    public void run(String... args) throws Exception {
         String menu = """
                 1 - Relatório sintético
                 2 - Produtos mais vendidos
