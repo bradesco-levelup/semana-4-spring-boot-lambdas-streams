@@ -122,6 +122,22 @@ Exibe um resumo com os principais indicadores das vendas, como total de pedidos,
   NOME: DANI
   Nº DE PEDIDOS: 4
   MONTANTE GASTO: R$ 54.786,40
+  
+  NOME: CAIO
+  Nº DE PEDIDOS: 3
+  MONTANTE GASTO: R$ 33.063,74
+  
+  NOME: BIA
+  Nº DE PEDIDOS: 3
+  MONTANTE GASTO: R$ 25.128,36
+  
+  NOME: ELI
+  Nº DE PEDIDOS: 1
+  MONTANTE GASTO: R$ 3.678,98
+  
+  NOME: GABI
+  Nº DE PEDIDOS: 1
+  MONTANTE GASTO: R$ 432,21
   ```
 
 ### 8️⃣ **Cadastrar pedido (opcional)**
